@@ -24,7 +24,7 @@ Control a drone by **moving your fist** - like dragging a cursor!
 python demos/hand_gesture_demo.py
 ```
 
-![Hand Gesture Demo](docs/hand_gesture_demo.gif)
+![Hand Gesture Demo](../docs/hand_gesture_demo.gif)
 _✊ Move your fist around the screen, drone follows!_
 
 **Gestures:**
