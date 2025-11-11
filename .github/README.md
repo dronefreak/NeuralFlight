@@ -24,7 +24,8 @@ Control a drone by **moving your fist** - like dragging a cursor!
 python demos/hand_gesture_demo.py
 ```
 
-![Hand Gesture Demo](../docs/hand_gesture_demo.gif)
+<!-- ![Hand Gesture Demo](../docs/hand_gesture_demo.gif) -->
+
 _✊ Move your fist around the screen, drone follows!_
 
 **Gestures:**
@@ -55,7 +56,8 @@ Control the drone with **head movements** - no hands needed!
 python demos/head_gesture_demo.py
 ```
 
-![Head Gesture Demo](docs/head_gesture_demo.gif)
+<!-- ![Head Gesture Demo](docs/head_gesture_demo.gif) -->
+
 _🗣️ Look down to fly forward, tilt head to strafe - hands-free control_
 
 **Controls:**
@@ -85,7 +87,7 @@ python demos/train_model.py
 python demos/motor_imagery_demo.py
 ```
 
-![Motor Imagery Demo](docs/motor_imagery_demo.gif)
+![Motor Imagery Demo](../docs/motor_imagery_demo.gif)
 _🧠 Real brain signals controlling a drone - no physical movement required_
 
 **Controls:**
