@@ -2,7 +2,7 @@
 
 ## System Design
 
-The BCI Drone Control framework follows a modular, layered architecture:
+The NeuralFlight Drone Control framework follows a modular, layered architecture:
 
 ```
 ┌─────────────────────────────────────────────────┐
@@ -29,7 +29,7 @@ The BCI Drone Control framework follows a modular, layered architecture:
 
 ## Core Components
 
-### 1. Simulator (`src/bci_drone/simulator/`)
+### 1. Simulator (`src/neuralflight/simulator/`)
 
 **Purpose:** Provides a physics-based drone simulation with real-time visualization.
 
@@ -48,7 +48,7 @@ The BCI Drone Control framework follows a modular, layered architecture:
 - Real-time status display
 - Configurable via YAML
 
-### 2. Controllers (`src/bci_drone/controllers/`)
+### 2. Controllers (`src/neuralflight/controllers/`)
 
 **Purpose:** High-level abstraction for drone control.
 
@@ -61,7 +61,7 @@ The BCI Drone Control framework follows a modular, layered architecture:
 
 **Design Pattern:** Adapter pattern - same interface works for different drone types.
 
-### 3. Gesture Input (`src/bci_drone/gestures/`)
+### 3. Gesture Input (`src/neuralflight/gestures/`)
 
 **Purpose:** Detect head movements using computer vision.
 
@@ -80,7 +80,7 @@ Camera → Face Detection → Landmark Extraction →
 Pose Calculation → Smoothing → Gesture Classification → Command
 ```
 
-### 4. EEG Processing (`src/bci_drone/eeg/`)
+### 4. EEG Processing (`src/neuralflight/eeg/`)
 
 **Purpose:** Load, preprocess, and classify EEG motor imagery data.
 
@@ -101,7 +101,7 @@ Raw EDF → MNE Loader → Channel Selection →
 Epoching → Filtering → Feature Extraction → Classification
 ```
 
-### 5. Models (`src/bci_drone/models/`)
+### 5. Models (`src/neuralflight/models/`)
 
 **Purpose:** Deep learning models for EEG classification.
 
@@ -131,7 +131,7 @@ Input: (batch, channels, time_samples)
 [Flatten] → [Dense] → Output: (batch, n_classes)
 ```
 
-### 6. Utilities (`src/bci_drone/utils/`)
+### 6. Utilities (`src/neuralflight/utils/`)
 
 **Purpose:** Shared utilities and helpers.
 
@@ -200,7 +200,7 @@ Benefits:
 
 ### Adding New Input Methods
 
-1. Create new module in `src/bci_drone/`
+1. Create new module in `src/neuralflight/`
 2. Implement input detector class
 3. Return commands in standard format
 4. Plug into `DroneController`
@@ -216,7 +216,7 @@ class VoiceCommandDetector:
 
 ### Adding Real Drone Support
 
-1. Create adapter in `src/bci_drone/adapters/`
+1. Create adapter in `src/neuralflight/adapters/`
 2. Implement same interface as `DroneSimulator`
 3. Handle hardware communication
 4. Use with existing `DroneController`
