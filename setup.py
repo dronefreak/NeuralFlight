@@ -25,8 +25,8 @@ setup(
     description="Neural control framework for drones - hand gestures, head tracking, and EEG",  # noqa E501
     long_description=long_description,
     long_description_content_type="text/markdown",
-    author="Likith Reddy",
-    author_email="likith012@gmail.com",
+    author="Saumya Saksena",
+    author_email="kumaar324@gmail.com",
     url="https://github.com/dronefreak/NeuralFlight",
     project_urls={
         "Documentation": "https://github.com/dronefreak/NeuralFlight#readme",

@@ -10,7 +10,7 @@ readme = "README.md"
 requires-python = ">=3.10"
 license = {text = "Apache-2.0"}
 authors = [
-    {name = "Likith Reddy", email = "likith012@gmail.com"}
+    {name = "Saumya Saksena", email = "kumaar324@gmail.com"}
 ]
 keywords = ["bci", "eeg", "drone", "pytorch", "machine-learning", "neuroscience", "computer-vision", "gesture-recognition"]
 classifiers = [
