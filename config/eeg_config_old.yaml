@@ -1,0 +1,98 @@
+# EEG Signal Processing Configuration
+
+# Dataset settings
+dataset:
+  name: "PhysioNet Motor Imagery"
+  url: "https://physionet.org/files/eegmmidb/1.0.0/"
+
+  # Subject split: CRITICAL for preventing overfitting!
+  train_subjects:
+    [
+      1,
+      2,
+      3,
+      4,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+    ]
+  val_subjects: [31, 32, 33, 34, 35, 36, 37, 38, 39, 40]
+
+  runs: [4, 8, 12] # Motor IMAGERY of left/right hand (not actual movement!)
+  # Run 4: imagine left/right fist (first session)
+  # Run 8: imagine left/right fist (second session)
+  # Run 12: imagine left/right fist (third session)
+
+# Signal processing
+preprocessing:
+  sampling_rate: 160 # Hz
+  lowcut: 8.0 # Hz, start of alpha band
+  highcut: 30.0 # Hz, end of beta band
+  filter_order: 5
+  notch_freq: 60.0 # Hz, US power line frequency
+  channels: [
+      "FC3",
+      "FC1",
+      "FCz",
+      "FC2",
+      "FC4",
+      "C5",
+      "C3",
+      "C1",
+      "Cz",
+      "C2",
+      "C4",
+      "C6",
+    ] # Motor cortex channels
+
+# Epoching
+epochs:
+  tmin: 0.0 # Start time relative to event (seconds)
+  tmax: 3.0 # End time relative to event (seconds)
+  baseline: null # No baseline correction for now
+
+# Model training
+model:
+  architecture: "EEGNet"
+  input_channels: 12
+  num_classes: 4 # left hand, right hand, feet, rest
+  dropout: 0.5
+  kernel_length: 64
+
+training:
+  batch_size: 64
+  learning_rate: 0.001
+  num_epochs: 5000
+  validation_split: 0.2
+  early_stopping_patience: 500
+  savedir: models/models_bs64_lr0001
+  savename: eegnet_best.pth
+
+# Command mapping
+class_to_command:
+  0: "strafe_left" # Left hand imagery
+  1: "strafe_right" # Right hand imagery
+  2: "forward" # Feet imagery
+  3: "hover" # Rest/no imagery

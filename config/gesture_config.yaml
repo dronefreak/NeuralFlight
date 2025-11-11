@@ -1,0 +1,43 @@
+# Head Gesture Detection Configuration
+
+# Camera settings
+camera:
+  device_id: 0
+  width: 640
+  height: 480
+  fps: 30
+
+# Mediapipe settings
+mediapipe:
+  min_detection_confidence: 0.5
+  min_tracking_confidence: 0.5
+
+# Gesture thresholds (in degrees)
+gestures:
+  pitch: # Nodding up/down
+    forward_threshold: -10 # Looking down
+    backward_threshold: 10 # Looking up
+    deadzone: 5
+  yaw: # Turning left/right
+    left_threshold: -15
+    right_threshold: 15
+    deadzone: 5
+  roll: # Tilting head
+    left_threshold: -10
+    right_threshold: 10
+    deadzone: 5
+
+# Command mapping
+commands:
+  pitch_down: "forward"
+  pitch_up: "backward"
+  yaw_left: "rotate_left"
+  yaw_right: "rotate_right"
+  roll_left: "strafe_left"
+  roll_right: "strafe_right"
+
+# Smoothing and filtering
+filtering:
+  enabled: true
+  window_size: 5 # Number of frames to average
+  min_confidence: 0.6 # Minimum confidence to register command

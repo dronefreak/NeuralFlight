@@ -1,0 +1,29 @@
+# Drone Simulator Configuration
+
+# Display settings
+window:
+  width: 800
+  height: 600
+  title: "BCI Drone Simulator"
+  fps: 60
+
+# Drone physics
+drone:
+  initial_position: [400, 300] # [x, y] center of screen
+  max_speed: 5.0
+  acceleration: 0.3
+  drag: 0.95 # Speed multiplier per frame (friction)
+  rotation_speed: 3.0
+
+# Visual settings
+colors:
+  background: [20, 20, 30]
+  drone: [0, 255, 100]
+  trail: [0, 255, 100, 50] # RGBA with alpha
+  grid: [50, 50, 60]
+  text: [200, 200, 200]
+
+# Control settings
+control:
+  command_duration: 0.1 # seconds
+  smoothing: 0.7 # 0-1, higher = smoother but more lag

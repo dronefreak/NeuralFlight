@@ -1,0 +1,36 @@
+# Hand Gesture Detection Configuration
+
+# Camera settings
+camera:
+  device_id: 0
+  width: 640
+  height: 480
+  fps: 30
+
+# Mediapipe settings
+mediapipe:
+  min_detection_confidence: 0.7
+  min_tracking_confidence: 0.7
+  max_num_hands: 1
+
+# Gesture thresholds (normalized -1 to 1)
+gestures:
+  position:
+    threshold: 0.10 # Lower threshold = more responsive (was 0.15)
+
+# Command mapping
+commands:
+  # Fist movement commands (0 fingers)
+  fist_up: "forward" # Fist in upper part of screen
+  fist_down: "backward" # Fist in lower part
+  fist_left: "strafe_left" # Fist on left side
+  fist_right: "strafe_right" # Fist on right side
+  fist_center: "hover" # Fist in center (dead zone)
+
+  # Open palm command (5 fingers)
+  open_palm: "land" # Takeoff if landed, land if flying
+
+# Smoothing and filtering
+filtering:
+  enabled: true
+  window_size: 5 # Number of frames to average
