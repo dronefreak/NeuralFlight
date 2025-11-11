@@ -88,6 +88,7 @@ python demos/motor_imagery_demo.py
 ```
 
 ![Motor Imagery Demo](../docs/motor_imagery_demo.gif)
+
 _🧠 Real brain signals controlling a drone - no physical movement required_
 
 **Controls:**
