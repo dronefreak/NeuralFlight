@@ -47,9 +47,9 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/yourusername/NeuralFlight"
-Repository = "https://github.com/yourusername/NeuralFlight"
-Documentation = "https://github.com/yourusername/NeuralFlight#readme"
+Homepage = "https://github.com/dronefreak/NeuralFlight"
+Repository = "https://github.com/dronefreak/NeuralFlight"
+Documentation = "https://github.com/dronefreak/NeuralFlight#readme"
 "Original Project" = "https://github.com/dronefreak/brain-computer-interface-for-drones"
 
 [tool.setuptools.packages.find]

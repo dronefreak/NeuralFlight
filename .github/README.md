@@ -495,5 +495,3 @@ If you find this project useful, consider giving it a star! It helps others disc
 - All contributors and users!
 
 ---
-
-**Built with 🧠 and ☕ by someone who thinks drones and brains are both cool.**

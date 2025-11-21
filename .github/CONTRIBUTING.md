@@ -128,7 +128,7 @@ We welcome code contributions! Areas where we need help:
 
 ```bash
 # Fork on GitHub, then clone your fork
-git clone https://github.com/YOUR_USERNAME/NeuralFlight.git
+git clone https://github.com/dronefreak/NeuralFlight.git
 cd NeuralFlight
 ```
 
