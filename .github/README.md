@@ -75,7 +75,7 @@ _🗣️ Look down to fly forward, tilt head to strafe - hands-free control_
 
 ---
 
-### 🧠 Motor Imagery Control (Research-Grade)
+### 🧠 Motor Imagery Control (Research-Oriented)
 
 Train a PyTorch model on **real EEG data** and control the drone with imagined hand movements.
 
